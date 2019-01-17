@@ -8,6 +8,10 @@
 #
 
 library(shiny)
+library(sf)
+library(mapview)
+library(leaflet)
+library(osmdata)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -27,7 +31,8 @@ ui <- fluidPage(
       
       # Show a plot of the generated distribution
       mainPanel(
-         plotOutput("distPlot")
+         plotOutput("distPlot"),
+         leafletOutput("mymap")
       )
    )
 )
@@ -43,6 +48,15 @@ server <- function(input, output) {
       # draw the histogram with the specified number of bins
       hist(x, breaks = bins, col = 'darkgray', border = 'white')
    })
+   q <- opq(bbox = 'south lake tahoe') %>%
+     add_osm_feature(key = 'highway', value = c('primary'))
+   prime <- osmdata_sf(q)
+   prime<-prime$osm_lines
+   output$mymap <- renderLeaflet({
+     leaflet(prime) %>%
+      addTiles() %>%
+       addPolylines()
+})
 }
 
 # Run the application 

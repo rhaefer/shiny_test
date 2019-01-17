@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1547705474125.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EE328082",
+    "lastKnownWriteTime" : 1534860627,
+    "last_content_update" : 1534860627,
+    "path" : "~/R/the_dataset.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "12,32",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

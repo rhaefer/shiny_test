@@ -1,0 +1,38 @@
+library(pacman)
+p_load(googleway, gtrendsR, tidycensus, stplanr, rayshader, gtfsr, leaflet.esri, lodes, tidyverse, wordcloud)
+
+#googleway
+#to do: need to parse the output into a data frame for further analysis
+origins <- data.frame(lat=38.953755, lon=-119.948538)
+destinations <- data.frame(lat=38.933784, lon= -120.039239)
+
+output<-google_distance(origins=origins, destinations=destinations, mode="driving",
+                        key = "AIzaSyCl5aoS8kelk_vkV1DKvGJ86s9AySfPakU")
+
+#gtrendsR
+lt<-gtrends(keyword = c("tahoe"), geo=c("US-CA","US-NV"), gprop=c("web"))[[1]]
+
+ggplot(lt, aes(x=date, y=hits, group = geo, colour = geo)) +
+  geom_line()
+
+dp <- gtrends("Donald Drumpf", time="7d")
+plot(dp) + ggplot2::ggtitle("The Drumpf") + ggplot2::theme(legend.position="none")
+#tidycensusm
+
+
+#stplanr
+
+
+#rayshader
+
+
+#gtfsr
+
+
+#leaflet.esri
+
+
+#lodes
+
+#dataviz
+##wordcloud

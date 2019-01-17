@@ -1,0 +1,12 @@
+library(pacman)
+p_load(gtrendsR, tidyverse, wordcloud)
+
+lt<-gtrends(keyword = c("lake tahoe"), geo=c("US-CA","US-NV"), gprop=c("web"))[[1]]
+
+ggplot(lt, aes(x=date, y=hits, group = geo, colour = geo)) +
+  geom_line()
+
+
+geo.codes <- sort(unique(countries[substr(countries$sub_code, 1, 2) == "US", ]$sub_code))
+
+wordcloud()

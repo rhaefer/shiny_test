@@ -1,0 +1,26 @@
+---
+title: "Transportation Project Map"
+output:
+  html_document:
+    theme: yeti
+    highlight: tango
+---
+
+```{r message=FALSE, warning=FALSE}
+library(pacman)
+pacman::p_load(shiny,shinydashboard , raster,leaflet,rsconnect,datasets, dplyr, xlsx, maptools,
+               rgdal, ggplot2, devtools, ggthemes, gtools, scales, DT, RColorBrewer, Rserve)
+
+setwd("X:/Trans/STAFF/Reid/Project Tracking/progress_reports")
+shapefile <- readOGR(dsn=".", layer="progress_reports",verbose = FALSE)
+shapefile<-spTransform(shapefile, CRS("+proj=longlat +datum=WGS84"))
+
+    leaflet() %>%
+      fitBounds(-122.2, 47.187, -122.4, 47.932)%>%
+      addProviderTiles("Stamen.TonerLite", group = "Toner Lite") %>%
+      addPolylines(data=shapefile, weight=4, color="red",
+                   popup=paste(sep="<br/>",paste("<b>Jurisdiction:</b> ",shapefile$Sponsor),paste("<b>Project Title:</b> ",shapefile$ProjectTit), paste("<b>Status:</b> ",shapefile$milestone))) %>%
+      addMiniMap(toggleDisplay = TRUE) %>%
+       addLegend("topright", title= "Regional Transportation Projects", colors= "#c60905", labels= "project")
+
+```

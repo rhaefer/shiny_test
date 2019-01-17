@@ -1,0 +1,40 @@
+library(pacman)
+p_load(osmdata, sf)
+
+q <- opq(bbox = 'south lake tahoe') %>%
+  add_osm_feature(key = 'highway', value = c('primary'))
+prime <- osmdata_sf(q)
+prime<-prime$osm_lines
+
+a <- opq(bbox = 'south lake tahoe') %>%
+  add_osm_feature(key = 'highway', value = c('secondary'))
+sec <- osmdata_sf(a)
+sec<-sec$osm_lines
+
+b <- opq(bbox = 'south lake tahoe') %>%
+  add_osm_feature(key = 'highway', value = c('unclassified'))
+un <- osmdata_sf(b)
+un<-un$osm_lines
+
+c <- opq(bbox = 'south lake tahoe') %>%
+  add_osm_feature(key = 'highway', value = c('residential'))
+res <- osmdata_sf(c)
+res<-res$osm_lines
+
+d <- opq(bbox = 'south lake tahoe') %>%
+  add_osm_feature(key = 'highway', value = c('service'))
+ser <- osmdata_sf(d)
+ser<-ser$osm_lines
+
+
+test<- st_union(ser, res)
+
+
+roads <- rbind(prime, sec)
+
+do.call('rbind')
+
+leaflet(ser) %>% addPolylines() %>% addTiles()
+
+plot(ser)
+
