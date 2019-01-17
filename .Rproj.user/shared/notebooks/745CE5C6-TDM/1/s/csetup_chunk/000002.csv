@@ -1,0 +1,69 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","library(pacman)"
+"0","p_load(tidyverse, osmdata, sf, leaflet, tmap, spDataLarge, stplanr, geojsonio, mapview)"
+"2","Installing package into ‘C:/Users/reidh/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+"
+"2","cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/src/contrib/PACKAGES.rds': HTTP status was '404 Not Found'"
+"2","also installing the dependencies ‘rgeos’, ‘tmaptools’, ‘raster’, ‘leaflet’
+
+"
+"2","cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.5/PACKAGES.rds': HTTP status was '404 Not Found'"
+"2","cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.5/PACKAGES.gz': HTTP status was '404 Not Found'"
+"2","cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.5/PACKAGES': HTTP status was '404 Not Found'"
+"2","unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.5:
+  cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.5/PACKAGES'"
+"2","package ‘leaflet’ is in use and will not be installed"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/rgeos_0.4-2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1896323 bytes (1.8 MB)
+"
+"2","downloaded 1.8 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/tmaptools_2.0-1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 343014 bytes (334 KB)
+"
+"2","downloaded 334 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/raster_2.8-4.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 3769387 bytes (3.6 MB)
+"
+"2","downloaded 3.6 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.5/tmap_2.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 3440695 bytes (3.3 MB)
+"
+"2","downloaded 3.3 MB
+
+"
+"1","package â€˜rgeosâ€™ successfully unpacked and MD5 sums checked
+"
+"1","package â€˜tmaptoolsâ€™ successfully unpacked and MD5 sums checked
+"
+"1","package â€˜rasterâ€™ successfully unpacked and MD5 sums checked
+"
+"2","cannot remove prior installation of package ‘raster’"
+"1","package â€˜tmapâ€™ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1","The downloaded binary packages are in
+	C:\Users\reidh\AppData\Local\Temp\Rtmp4WLGhe\downloaded_packages"
+"1","
+"
+"2","
+tmap installed
+"
+"2","package ‘tmap’ was built under R version 3.5.2"
+"2","Failed to install/load:
+tmap"
